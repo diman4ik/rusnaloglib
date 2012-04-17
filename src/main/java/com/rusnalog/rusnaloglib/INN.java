@@ -20,6 +20,15 @@ public class INN {
 	
 	public static boolean isValidInnStr( String inn ) {		
 		
+		return innNumberValid( inn ) & innControlDigitsValid( inn );
+	}
+	
+	public static boolean innNumberValid( String inn ) {
+		// TODO:
+		return true;
+	}
+	
+	public static boolean innControlDigitsValid( String inn ) {
 		if( inn.length() == 10 ) {
 			char digit10 = Integer.toString( compute10Digit(inn) ).charAt( 0 );
 			
