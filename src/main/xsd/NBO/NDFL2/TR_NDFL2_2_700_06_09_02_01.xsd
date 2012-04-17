@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<!-- edited with XMLSpy v2007 sp2 (http://www.altova.com) by ЛАПШИН (GNIVC FNS RF) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:include schemaLocation="../NBOTypes.xsd"/>
+	<xs:element name="описание">
+		<xs:annotation>
+			<xs:documentation>Описание справки о доходах по форме 2-НДФЛ </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="имяФормы">
+					<xs:annotation>
+						<xs:documentation>Имя формы сведений</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="5"/>
+							<xs:maxLength value="6"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="КНДФормы">
+					<xs:annotation>
+						<xs:documentation>КНД формы сведений</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:length value="7"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="год" type="xs:gYear">
+					<xs:annotation>
+						<xs:documentation>Отчетный год за который передается справка</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="КодНО" type="СОНОТип">
+					<xs:annotation>
+						<xs:documentation>Код налогового органа</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ДопСв" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Дополнительные сведения</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:any processContents="skip" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
