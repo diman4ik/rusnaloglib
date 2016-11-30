@@ -29,7 +29,7 @@ public class SNILS {
 			int next_digit = random%10;
 			random = random/10;
 			
-			if( ( pos++ ) %3 == 0 ) {
+			if( pos % 3 == 0 ) {
 				if( pos == 0 )
 					ret.insert(  0, " " );
 				else
@@ -37,6 +37,7 @@ public class SNILS {
 			}
 				
 			ret.insert( 0, Integer.toString(next_digit) );
+			pos++;
 		}while( random != 0 );
 		
 		if( control == 0 )
